@@ -49,6 +49,116 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Welcome Back!`
+  String get loginTitle {
+    return Intl.message(
+      'Welcome Back!',
+      name: 'loginTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in to connect with your community.`
+  String get loginSubtitle {
+    return Intl.message(
+      'Sign in to connect with your community.',
+      name: 'loginSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your username`
+  String get usernameHint {
+    return Intl.message(
+      'Enter your username',
+      name: 'usernameHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your password`
+  String get passwordHint {
+    return Intl.message(
+      'Enter your password',
+      name: 'passwordHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign In`
+  String get signIn {
+    return Intl.message(
+      'Sign In',
+      name: 'signIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your username`
+  String get usernameRequired {
+    return Intl.message(
+      'Please enter your username',
+      name: 'usernameRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your password`
+  String get passwordRequired {
+    return Intl.message(
+      'Please enter your password',
+      name: 'passwordRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid username or password`
+  String get invalidCredentials {
+    return Intl.message(
+      'Invalid username or password',
+      name: 'invalidCredentials',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please check your internet connection`
+  String get networkError {
+    return Intl.message(
+      'Please check your internet connection',
+      name: 'networkError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Server error. Please try again later`
+  String get serverError {
+    return Intl.message(
+      'Server error. Please try again later',
+      name: 'serverError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong. Please try again`
+  String get unexpectedError {
+    return Intl.message(
+      'Something went wrong. Please try again',
+      name: 'unexpectedError',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

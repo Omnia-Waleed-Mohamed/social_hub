@@ -21,5 +21,26 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "invalidCredentials": MessageLookupByLibrary.simpleMessage(
+            "Invalid username or password"),
+        "loginSubtitle": MessageLookupByLibrary.simpleMessage(
+            "Sign in to connect with your community."),
+        "loginTitle": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
+        "networkError": MessageLookupByLibrary.simpleMessage(
+            "Please check your internet connection"),
+        "passwordHint":
+            MessageLookupByLibrary.simpleMessage("Enter your password"),
+        "passwordRequired":
+            MessageLookupByLibrary.simpleMessage("Please enter your password"),
+        "serverError": MessageLookupByLibrary.simpleMessage(
+            "Server error. Please try again later"),
+        "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
+        "unexpectedError": MessageLookupByLibrary.simpleMessage(
+            "Something went wrong. Please try again"),
+        "usernameHint":
+            MessageLookupByLibrary.simpleMessage("Enter your username"),
+        "usernameRequired":
+            MessageLookupByLibrary.simpleMessage("Please enter your username")
+      };
 }

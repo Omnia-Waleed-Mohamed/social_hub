@@ -21,5 +21,26 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "invalidCredentials": MessageLookupByLibrary.simpleMessage(
+            "اسم المستخدم أو كلمة المرور غير صحيحة"),
+        "loginSubtitle": MessageLookupByLibrary.simpleMessage(
+            "سجّل الدخول للتواصل مع مجتمعك."),
+        "loginTitle": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك!"),
+        "networkError":
+            MessageLookupByLibrary.simpleMessage("تأكدي من اتصالك بالإنترنت"),
+        "passwordHint":
+            MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
+        "passwordRequired":
+            MessageLookupByLibrary.simpleMessage("من فضلك أدخل كلمة المرور"),
+        "serverError": MessageLookupByLibrary.simpleMessage(
+            "حدث خطأ في الخادم، حاولي مرة أخرى لاحقًا"),
+        "signIn": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "unexpectedError": MessageLookupByLibrary.simpleMessage(
+            "حدث خطأ غير متوقع، حاولي مرة أخرى"),
+        "usernameHint":
+            MessageLookupByLibrary.simpleMessage("أدخل اسم المستخدم"),
+        "usernameRequired":
+            MessageLookupByLibrary.simpleMessage("من فضلك أدخل اسم المستخدم")
+      };
 }
