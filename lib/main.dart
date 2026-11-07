@@ -3,6 +3,9 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:social_hub/generated/l10n.dart';
 import 'core/theme/app_theme.dart';
 
+
+//https://jsonplaceholder.typicode.com/ 
+
 void main() {
   runApp(const SocialHubApp());
 }
