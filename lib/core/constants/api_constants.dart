@@ -6,6 +6,7 @@ abstract class ApiConstants {
           'https://jsonplaceholder.cypress.io';
 
   static const String users = '/users';
+  static const String posts = '/posts';
 
   static const Duration connectTimeout = Duration(seconds: 30);
   static const Duration receiveTimeout = Duration(seconds: 15);
