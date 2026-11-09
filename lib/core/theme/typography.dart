@@ -8,7 +8,7 @@ abstract class AppTypography {
   static const TextTheme textTheme = TextTheme(
     displayLarge: TextStyle(
       fontFamily: fontFamily,
-      fontSize: 32,
+      fontSize: 38,
       fontWeight: FontWeight.bold,
     ),
     displayMedium: TextStyle(

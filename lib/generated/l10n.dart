@@ -50,6 +50,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `SocialHub`
+  String get social {
+    return Intl.message(
+      'SocialHub',
+      name: 'social',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Welcome Back!`
   String get loginTitle {
     return Intl.message(
@@ -60,10 +70,10 @@ class S {
     );
   }
 
-  /// `Sign in to connect with your community.`
+  /// `Sign in to continue`
   String get loginSubtitle {
     return Intl.message(
-      'Sign in to connect with your community.',
+      'Sign in to continue',
       name: 'loginSubtitle',
       desc: '',
       args: [],

@@ -1,6 +1,7 @@
 {
+  "social": "SocialHub",
   "loginTitle": "Welcome Back!",
-  "loginSubtitle": "Sign in to connect with your community.",
+  "loginSubtitle": "Sign in to continue",
 
   "username": "Username",
   "usernameHint": "Enter your username",

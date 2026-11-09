@@ -1,7 +1,7 @@
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:social_hub/core/constants/app_radius.dart';
 import 'package:social_hub/core/constants/app_spacing.dart';
 import 'package:social_hub/core/dependency_injection/service_locator.dart';
 import 'package:social_hub/features/auth/domain/entities/login_failure.dart';
@@ -61,7 +61,7 @@ class _LoginViewState extends State<_LoginView> {
         return localization.invalidCredentials;
 
       case LoginFailure.noInternet:
-        return 'No internet connection. Please check your Wi‑Fi/mobile data and try again.';
+        return 'No internet connection. Please check your Wi-Fi/mobile data and try again.';
 
       case LoginFailure.sslHandshake:
         return 'SSL connection problem. This usually means the network or certificate is blocking secure access.';
@@ -105,60 +105,54 @@ class _LoginViewState extends State<_LoginView> {
           builder: (context, state) {
             final isLoading = state is LoginLoading;
 
-            return Center(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.all(AppSpacing.lg),
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(
-                    maxWidth: 420,
-                  ),
-                  child: Container(
-                    padding: const EdgeInsets.all(AppSpacing.xl),
-                    decoration: BoxDecoration(
-                      color: colorScheme.surface,
-                      borderRadius: BorderRadius.circular(
-                        AppRadius.xxl,
+            return LayoutBuilder(
+              builder: (context, constraints) {
+                return SingleChildScrollView(
+                  padding: const EdgeInsets.all(AppSpacing.lg),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: math.max(
+                        0.0,
+                        constraints.maxHeight - (AppSpacing.lg * 2),
                       ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: colorScheme.shadow.withValues(
-                            alpha: 0.06,
-                          ),
-                          blurRadius: 24,
-                          offset: const Offset(0, 8),
+                    ),
+                    child: Center(
+                      child: ConstrainedBox(
+                        constraints: const BoxConstraints(
+                          maxWidth: 420,
                         ),
-                      ],
-                    ),
-                    child: Form(
-                      key: _formKey,
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          const LoginHeader(),
+                        child: Form(
+                          key: _formKey,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const LoginHeader(),
 
-                          const SizedBox(
-                            height: AppSpacing.xl,
-                          ),
+                              const SizedBox(
+                                height: AppSpacing.xl,
+                              ),
 
-                          LoginForm(
-                            usernameController: _usernameController,
-                            passwordController: _passwordController,
-                          ),
+                              LoginForm(
+                                usernameController: _usernameController,
+                                passwordController: _passwordController,
+                              ),
 
-                          const SizedBox(
-                            height: AppSpacing.xl,
-                          ),
+                              const SizedBox(
+                                height: AppSpacing.xl,
+                              ),
 
-                          LoginButton(
-                            isLoading: isLoading,
-                            onPressed: isLoading ? null : _login,
+                              LoginButton(
+                                isLoading: isLoading,
+                                onPressed: isLoading ? null : _login,
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ),
+                );
+              },
             );
           },
         ),

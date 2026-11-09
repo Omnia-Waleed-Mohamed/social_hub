@@ -24,8 +24,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "invalidCredentials": MessageLookupByLibrary.simpleMessage(
             "Invalid username or password"),
-        "loginSubtitle": MessageLookupByLibrary.simpleMessage(
-            "Sign in to connect with your community."),
+        "loginSubtitle":
+            MessageLookupByLibrary.simpleMessage("Sign in to continue"),
         "loginTitle": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
         "networkError": MessageLookupByLibrary.simpleMessage(
             "Please check your internet connection"),
@@ -39,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "serverError": MessageLookupByLibrary.simpleMessage(
             "Server error. Please try again later"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
+        "social": MessageLookupByLibrary.simpleMessage("SocialHub"),
         "sslHandshake": MessageLookupByLibrary.simpleMessage(
             "SSL connection problem. The network or certificate is blocking secure access."),
         "timeout": MessageLookupByLibrary.simpleMessage(
