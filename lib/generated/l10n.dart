@@ -70,31 +70,21 @@ class S {
     );
   }
 
+  /// `Username`
+  String get username {
+    return Intl.message(
+      'Username',
+      name: 'username',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Enter your username`
   String get usernameHint {
     return Intl.message(
       'Enter your username',
       name: 'usernameHint',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter your password`
-  String get passwordHint {
-    return Intl.message(
-      'Enter your password',
-      name: 'passwordHint',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Sign In`
-  String get signIn {
-    return Intl.message(
-      'Sign In',
-      name: 'signIn',
       desc: '',
       args: [],
     );
@@ -110,6 +100,26 @@ class S {
     );
   }
 
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your password`
+  String get passwordHint {
+    return Intl.message(
+      'Enter your password',
+      name: 'passwordHint',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Please enter your password`
   String get passwordRequired {
     return Intl.message(
@@ -120,11 +130,51 @@ class S {
     );
   }
 
+  /// `Sign In`
+  String get signIn {
+    return Intl.message(
+      'Sign In',
+      name: 'signIn',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Invalid username or password`
   String get invalidCredentials {
     return Intl.message(
       'Invalid username or password',
       name: 'invalidCredentials',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No internet connection. Please check your Wi‑Fi or mobile data and try again.`
+  String get noInternet {
+    return Intl.message(
+      'No internet connection. Please check your Wi‑Fi or mobile data and try again.',
+      name: 'noInternet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `SSL connection problem. The network or certificate is blocking secure access.`
+  String get sslHandshake {
+    return Intl.message(
+      'SSL connection problem. The network or certificate is blocking secure access.',
+      name: 'sslHandshake',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Request timed out. Please check your internet connection and try again.`
+  String get timeout {
+    return Intl.message(
+      'Request timed out. Please check your internet connection and try again.',
+      name: 'timeout',
       desc: '',
       args: [],
     );

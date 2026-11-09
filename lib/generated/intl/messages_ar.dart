@@ -27,17 +27,25 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginSubtitle": MessageLookupByLibrary.simpleMessage(
             "سجّل الدخول للتواصل مع مجتمعك."),
         "loginTitle": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك!"),
-        "networkError":
-            MessageLookupByLibrary.simpleMessage("تأكدي من اتصالك بالإنترنت"),
+        "networkError": MessageLookupByLibrary.simpleMessage(
+            "يرجى التحقق من اتصالك بالإنترنت"),
+        "noInternet": MessageLookupByLibrary.simpleMessage(
+            "لا يوجد اتصال بالإنترنت. يرجى التحقق من شبكة Wi‑Fi أو البيانات المتنقلة ثم المحاولة مرة أخرى."),
+        "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "passwordHint":
             MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
         "passwordRequired":
             MessageLookupByLibrary.simpleMessage("من فضلك أدخل كلمة المرور"),
         "serverError": MessageLookupByLibrary.simpleMessage(
-            "حدث خطأ في الخادم، حاولي مرة أخرى لاحقًا"),
+            "حدث خطأ في الخادم. حاول مرة أخرى لاحقًا"),
         "signIn": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "sslHandshake": MessageLookupByLibrary.simpleMessage(
+            "مشكلة في اتصال SSL. غالبًا بسبب شبكة أو شهادة تمنع الاتصال الآمن."),
+        "timeout": MessageLookupByLibrary.simpleMessage(
+            "انتهت مهلة الطلب. يرجى التحقق من اتصالك بالإنترنت ثم المحاولة مرة أخرى."),
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
-            "حدث خطأ غير متوقع، حاولي مرة أخرى"),
+            "حدث خطأ غير متوقع. حاول مرة أخرى"),
+        "username": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
         "usernameHint":
             MessageLookupByLibrary.simpleMessage("أدخل اسم المستخدم"),
         "usernameRequired":

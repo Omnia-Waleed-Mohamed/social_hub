@@ -1,12 +1,21 @@
 {
   "loginTitle": "Welcome Back!",
   "loginSubtitle": "Sign in to connect with your community.",
+
+  "username": "Username",
   "usernameHint": "Enter your username",
-  "passwordHint": "Enter your password",
-  "signIn": "Sign In",
   "usernameRequired": "Please enter your username",
+
+  "password": "Password",
+  "passwordHint": "Enter your password",
   "passwordRequired": "Please enter your password",
+
+  "signIn": "Sign In",
+
   "invalidCredentials": "Invalid username or password",
+  "noInternet": "No internet connection. Please check your Wi‑Fi or mobile data and try again.",
+  "sslHandshake": "SSL connection problem. The network or certificate is blocking secure access.",
+  "timeout": "Request timed out. Please check your internet connection and try again.",
   "networkError": "Please check your internet connection",
   "serverError": "Server error. Please try again later",
   "unexpectedError": "Something went wrong. Please try again"

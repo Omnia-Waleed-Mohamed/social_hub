@@ -1,6 +1,8 @@
 enum LoginFailure {
   invalidCredentials,
-  network,
+  noInternet,
+  sslHandshake,
+  timeout,
   server,
   unexpected,
 }

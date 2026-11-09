@@ -29,6 +29,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginTitle": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
         "networkError": MessageLookupByLibrary.simpleMessage(
             "Please check your internet connection"),
+        "noInternet": MessageLookupByLibrary.simpleMessage(
+            "No internet connection. Please check your Wi‑Fi or mobile data and try again."),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordHint":
             MessageLookupByLibrary.simpleMessage("Enter your password"),
         "passwordRequired":
@@ -36,8 +39,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "serverError": MessageLookupByLibrary.simpleMessage(
             "Server error. Please try again later"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
+        "sslHandshake": MessageLookupByLibrary.simpleMessage(
+            "SSL connection problem. The network or certificate is blocking secure access."),
+        "timeout": MessageLookupByLibrary.simpleMessage(
+            "Request timed out. Please check your internet connection and try again."),
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
             "Something went wrong. Please try again"),
+        "username": MessageLookupByLibrary.simpleMessage("Username"),
         "usernameHint":
             MessageLookupByLibrary.simpleMessage("Enter your username"),
         "usernameRequired":

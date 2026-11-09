@@ -18,6 +18,7 @@ abstract class AppDimensions {
   static const double iconMedium = 20;
   static const double iconLarge = 24;
   static const double iconExtraLarge = 32;
+  static const double logoSize = 80;
 
   // Avatars
   static const double avatarSmall = 32;
