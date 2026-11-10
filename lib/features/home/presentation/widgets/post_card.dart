@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:social_hub/core/constants/app_spacing.dart';
 import 'package:social_hub/features/home/domain/entities/post_entity.dart';
-import 'package:social_hub/generated/l10n.dart';
 
 class PostCard extends StatelessWidget {
   const PostCard({
@@ -64,7 +63,9 @@ class PostCard extends StatelessWidget {
                 ),
               ],
             ),
+
             const SizedBox(height: AppSpacing.md),
+
             Text(
               post.title,
               style: textTheme.titleMedium?.copyWith(
@@ -72,7 +73,9 @@ class PostCard extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+
             const SizedBox(height: AppSpacing.sm),
+
             Text(
               post.body,
               style: textTheme.bodyMedium?.copyWith(
@@ -80,25 +83,52 @@ class PostCard extends StatelessWidget {
                 height: 1.5,
               ),
             ),
+
             const SizedBox(height: AppSpacing.md),
+
             Divider(
               color: colorScheme.outlineVariant,
               height: 1,
             ),
+
             const SizedBox(height: AppSpacing.sm),
+
             Row(
               children: [
                 Icon(
-                  Icons.article_outlined,
-                  size: 18,
-                  color: colorScheme.primary,
+                  Icons.favorite_border,
+                  size: 19,
+                  color: colorScheme.error,
                 ),
                 const SizedBox(width: AppSpacing.xs),
                 Text(
-                  S.of(context).postNumber(post.id),
+                  '0',
                   style: textTheme.labelMedium?.copyWith(
                     color: colorScheme.onSurfaceVariant,
                   ),
+                ),
+
+                const SizedBox(width: AppSpacing.lg),
+
+                Icon(
+                  Icons.chat_bubble_outline,
+                  size: 19,
+                  color: colorScheme.onSurfaceVariant,
+                ),
+                const SizedBox(width: AppSpacing.xs),
+                Text(
+                  '0',
+                  style: textTheme.labelMedium?.copyWith(
+                    color: colorScheme.onSurfaceVariant,
+                  ),
+                ),
+
+                const Spacer(),
+
+                Icon(
+                  Icons.share_outlined,
+                  size: 19,
+                  color: colorScheme.onSurfaceVariant,
                 ),
               ],
             ),
