@@ -219,6 +219,146 @@ class S {
       args: [],
     );
   }
+
+  /// `Good Morning! 👋`
+  String get homeGreeting {
+    return Intl.message(
+      'Good Morning! 👋',
+      name: 'homeGreeting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Explore what's new in your community`
+  String get homeSubtitle {
+    return Intl.message(
+      'Explore what\'s new in your community',
+      name: 'homeSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recent Posts`
+  String get postsTitle {
+    return Intl.message(
+      'Recent Posts',
+      name: 'postsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Post #{postId}`
+  String postNumber(int postId) {
+    return Intl.message(
+      'Post #$postId',
+      name: 'postNumber',
+      desc: '',
+      args: [postId],
+    );
+  }
+
+  /// `Something went wrong while loading posts. Please try again.`
+  String get postsLoadError {
+    return Intl.message(
+      'Something went wrong while loading posts. Please try again.',
+      name: 'postsLoadError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No posts available right now.`
+  String get noPosts {
+    return Intl.message(
+      'No posts available right now.',
+      name: 'noPosts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try Again`
+  String get retry {
+    return Intl.message(
+      'Try Again',
+      name: 'retry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search`
+  String get search {
+    return Intl.message(
+      'Search',
+      name: 'search',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get home {
+    return Intl.message(
+      'Home',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Users`
+  String get users {
+    return Intl.message(
+      'Users',
+      name: 'users',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Albums`
+  String get albums {
+    return Intl.message(
+      'Albums',
+      name: 'albums',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Todos`
+  String get todos {
+    return Intl.message(
+      'Todos',
+      name: 'todos',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create post`
+  String get createPost {
+    return Intl.message(
+      'Create post',
+      name: 'createPost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create post feature is coming soon.`
+  String get createPostComingSoon {
+    return Intl.message(
+      'Create post feature is coming soon.',
+      name: 'createPostComingSoon',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

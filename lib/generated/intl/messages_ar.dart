@@ -20,8 +20,18 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
+  static String m0(postId) => "منشور رقم ${postId}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "albums": MessageLookupByLibrary.simpleMessage("الألبومات"),
+        "createPost": MessageLookupByLibrary.simpleMessage("إنشاء منشور"),
+        "createPostComingSoon": MessageLookupByLibrary.simpleMessage(
+            "ميزة إنشاء المنشورات قريبًا."),
+        "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+        "homeGreeting": MessageLookupByLibrary.simpleMessage("صباح الخير! 👋"),
+        "homeSubtitle": MessageLookupByLibrary.simpleMessage(
+            "اكتشف آخر المنشورات في مجتمعك"),
         "invalidCredentials": MessageLookupByLibrary.simpleMessage(
             "اسم المستخدم أو كلمة المرور غير صحيحة"),
         "loginSubtitle": MessageLookupByLibrary.simpleMessage(
@@ -31,11 +41,19 @@ class MessageLookup extends MessageLookupByLibrary {
             "يرجى التحقق من اتصالك بالإنترنت"),
         "noInternet": MessageLookupByLibrary.simpleMessage(
             "لا يوجد اتصال بالإنترنت. يرجى التحقق من شبكة Wi‑Fi أو البيانات المتنقلة ثم المحاولة مرة أخرى."),
+        "noPosts": MessageLookupByLibrary.simpleMessage(
+            "لا توجد منشورات متاحة حاليًا."),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "passwordHint":
             MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
         "passwordRequired":
             MessageLookupByLibrary.simpleMessage("من فضلك أدخل كلمة المرور"),
+        "postNumber": m0,
+        "postsLoadError": MessageLookupByLibrary.simpleMessage(
+            "حدث خطأ أثناء تحميل المنشورات. حاول مرة أخرى."),
+        "postsTitle": MessageLookupByLibrary.simpleMessage("أحدث المنشورات"),
+        "retry": MessageLookupByLibrary.simpleMessage("حاول مرة أخرى"),
+        "search": MessageLookupByLibrary.simpleMessage("بحث"),
         "serverError": MessageLookupByLibrary.simpleMessage(
             "حدث خطأ في الخادم. حاول مرة أخرى لاحقًا"),
         "signIn": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
@@ -43,12 +61,14 @@ class MessageLookup extends MessageLookupByLibrary {
             "مشكلة في اتصال SSL. غالبًا بسبب شبكة أو شهادة تمنع الاتصال الآمن."),
         "timeout": MessageLookupByLibrary.simpleMessage(
             "انتهت مهلة الطلب. يرجى التحقق من اتصالك بالإنترنت ثم المحاولة مرة أخرى."),
+        "todos": MessageLookupByLibrary.simpleMessage("المهام"),
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
             "حدث خطأ غير متوقع. حاول مرة أخرى"),
         "username": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
         "usernameHint":
             MessageLookupByLibrary.simpleMessage("أدخل اسم المستخدم"),
         "usernameRequired":
-            MessageLookupByLibrary.simpleMessage("من فضلك أدخل اسم المستخدم")
+            MessageLookupByLibrary.simpleMessage("من فضلك أدخل اسم المستخدم"),
+        "users": MessageLookupByLibrary.simpleMessage("المستخدمون")
       };
 }

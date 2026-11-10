@@ -19,5 +19,28 @@
   "timeout": "Request timed out. Please check your internet connection and try again.",
   "networkError": "Please check your internet connection",
   "serverError": "Server error. Please try again later",
-  "unexpectedError": "Something went wrong. Please try again"
+  "unexpectedError": "Something went wrong. Please try again",
+
+
+  "homeGreeting": "Good Morning! 👋",
+  "homeSubtitle": "Explore what's new in your community",
+  "postsTitle": "Recent Posts",
+  "postNumber": "Post #{postId}",
+  "@postNumber": {
+    "placeholders": {
+      "postId": {
+        "type": "int"
+      }
+    }
+  },
+  "postsLoadError": "Something went wrong while loading posts. Please try again.",
+  "noPosts": "No posts available right now.",
+  "retry": "Try Again",
+  "search": "Search",
+  "home": "Home",
+  "users": "Users",
+  "albums": "Albums",
+  "todos": "Todos",
+  "createPost": "Create post",
+  "createPostComingSoon": "Create post feature is coming soon."
 }

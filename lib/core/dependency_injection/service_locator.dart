@@ -9,6 +9,12 @@ import 'package:social_hub/features/auth/data/repositories/auth_repository_impl.
 import 'package:social_hub/features/auth/domain/repositories/auth_repository.dart';
 import 'package:social_hub/features/auth/domain/use_cases/login_use_case.dart';
 import 'package:social_hub/features/auth/presentation/logic/login_cubit.dart';
+import 'package:social_hub/features/home/data/data_sources/posts_local_data_source.dart';
+import 'package:social_hub/features/home/data/data_sources/posts_remote_data_source.dart';
+import 'package:social_hub/features/home/data/repositories/posts_repository_impl.dart';
+import 'package:social_hub/features/home/domain/repositories/posts_repository.dart';
+import 'package:social_hub/features/home/domain/use_cases/get_posts_use_case.dart';
+import 'package:social_hub/features/home/presentation/logic/home_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -17,21 +23,15 @@ Future<void> setupDependencies() async {
 
   final sessionBox = await Hive.openBox<dynamic>('session');
 
-  getIt.registerLazySingleton<Box<dynamic>>(
-    () => sessionBox,
-  );
+  getIt.registerLazySingleton<Box<dynamic>>(() => sessionBox);
 
   getIt.registerLazySingleton<SessionStorage>(
     () => SessionStorageImpl(getIt()),
   );
 
-  getIt.registerLazySingleton<DioClient>(
-    () => DioClient(),
-  );
+  getIt.registerLazySingleton<DioClient>(() => DioClient());
 
-  getIt.registerLazySingleton<Dio>(
-    () => getIt<DioClient>().dio,
-  );
+  getIt.registerLazySingleton<Dio>(() => getIt<DioClient>().dio);
 
   getIt.registerLazySingleton<AuthRemoteDataSource>(
     () => AuthRemoteDataSourceImpl(getIt()),
@@ -42,17 +42,44 @@ Future<void> setupDependencies() async {
   );
 
   getIt.registerLazySingleton<AuthRepository>(
-    () => AuthRepositoryImpl(
+    () =>
+        AuthRepositoryImpl(remoteDataSource: getIt(), localDataSource: getIt()),
+  );
+
+  getIt.registerLazySingleton<LoginUseCase>(() => LoginUseCase(getIt()));
+
+  getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
+
+  // Open posts cache box.
+  final postsCacheBox = await Hive.openBox<dynamic>('posts_cache');
+
+  getIt.registerSingleton<Box<dynamic>>(
+    postsCacheBox,
+    instanceName: 'postsCacheBox',
+  );
+
+  // Data Sources
+  getIt.registerLazySingleton<PostsRemoteDataSource>(
+    () => PostsRemoteDataSourceImpl(getIt<DioClient>().dio),
+  );
+
+  getIt.registerLazySingleton<PostsLocalDataSource>(
+    () => PostsLocalDataSourceImpl(
+      getIt<Box<dynamic>>(instanceName: 'postsCacheBox'),
+    ),
+  );
+
+  // Repository
+  getIt.registerLazySingleton<PostsRepository>(
+    () => PostsRepositoryImpl(
       remoteDataSource: getIt(),
       localDataSource: getIt(),
     ),
   );
 
-  getIt.registerLazySingleton<LoginUseCase>(
-    () => LoginUseCase(getIt()),
-  );
+  // Use Case
+  getIt.registerLazySingleton<GetPostsUseCase>(() => GetPostsUseCase(getIt()));
 
-  getIt.registerFactory<LoginCubit>(
-    () => LoginCubit(getIt()),
-  );
+  // Cubit
+  getIt.registerFactory<HomeCubit>(() => HomeCubit(getPostsUseCase: getIt()));
 }
