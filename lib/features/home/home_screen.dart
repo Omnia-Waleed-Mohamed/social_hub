@@ -4,7 +4,6 @@ import 'package:social_hub/core/constants/app_spacing.dart';
 import 'package:social_hub/core/dependency_injection/service_locator.dart';
 import 'package:social_hub/features/home/presentation/logic/home_cubit.dart';
 import 'package:social_hub/features/home/presentation/logic/home_state.dart';
-import 'package:social_hub/features/home/presentation/widgets/home_bottom_navigation_bar.dart';
 import 'package:social_hub/features/home/presentation/widgets/home_header.dart';
 import 'package:social_hub/features/home/presentation/widgets/posts_list.dart';
 import 'package:social_hub/generated/l10n.dart';
@@ -21,31 +20,8 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class _HomeView extends StatefulWidget {
+class _HomeView extends StatelessWidget {
   const _HomeView();
-
-  @override
-  State<_HomeView> createState() => _HomeViewState();
-}
-
-class _HomeViewState extends State<_HomeView> {
-  int _selectedIndex = 0;
-
-  void _onItemSelected(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
-  void _onAddPressed() {
-    ScaffoldMessenger.of(context)
-      ..hideCurrentSnackBar()
-      ..showSnackBar(
-        SnackBar(
-          content: Text(S.of(context).createPostComingSoon),
-        ),
-      );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -126,9 +102,7 @@ class _HomeViewState extends State<_HomeView> {
 
                             FilledButton(
                               onPressed: () {
-                                context
-                                    .read<HomeCubit>()
-                                    .loadPosts();
+                                context.read<HomeCubit>().loadPosts();
                               },
                               child: Text(
                                 S.of(context).retry,
@@ -167,12 +141,7 @@ class _HomeViewState extends State<_HomeView> {
           ),
         ),
       ),
-
-      bottomNavigationBar: HomeBottomNavigationBar(
-        selectedIndex: _selectedIndex,
-        onItemSelected: _onItemSelected,
-        onAddPressed: _onAddPressed,
-      ),
     );
   }
 }
+

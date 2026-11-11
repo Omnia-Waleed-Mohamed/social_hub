@@ -18,7 +18,6 @@ class HomeBottomNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
 
-
     return BottomAppBar(
       color: colorScheme.surface,
       elevation: 8,
@@ -46,7 +45,6 @@ class HomeBottomNavigationBar extends StatelessWidget {
               onTap: () => onItemSelected(1),
             ),
           ),
-
           Expanded(
             child: Center(
               child: IconButton.filled(
@@ -61,7 +59,6 @@ class HomeBottomNavigationBar extends StatelessWidget {
               ),
             ),
           ),
-
           Expanded(
             child: _NavigationItem(
               icon: Icons.photo_album_outlined,
@@ -134,6 +131,8 @@ class _NavigationItem extends StatelessWidget {
                     ? FontWeight.bold
                     : FontWeight.normal,
               ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
           ],
         ),

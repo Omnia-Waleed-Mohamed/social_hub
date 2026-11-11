@@ -8,6 +8,7 @@ class LoginHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
+    final colorScheme = Theme.of(context).colorScheme;
 
     return Column(
       children: [
@@ -21,7 +22,7 @@ class LoginHeader extends StatelessWidget {
         Text(
           S.of(context).social,
           style: textTheme.displayLarge?.copyWith(
-            color: Colors.black,
+            color: colorScheme.onSurface,
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
@@ -32,7 +33,7 @@ class LoginHeader extends StatelessWidget {
         Text(
           S.of(context).loginTitle,
           style: textTheme.headlineMedium?.copyWith(
-            color: Colors.black,
+            color: colorScheme.onSurface,
             fontWeight: FontWeight.w600,
           ),
           textAlign: TextAlign.center,
