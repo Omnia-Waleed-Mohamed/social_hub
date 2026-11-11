@@ -15,6 +15,12 @@ import 'package:social_hub/features/home/data/repositories/posts_repository_impl
 import 'package:social_hub/features/home/domain/repositories/posts_repository.dart';
 import 'package:social_hub/features/home/domain/use_cases/get_posts_use_case.dart';
 import 'package:social_hub/features/home/presentation/logic/home_cubit.dart';
+import 'package:social_hub/features/users/data/data_source/users_local_data_source.dart';
+import 'package:social_hub/features/users/data/data_source/users_remote_data_source.dart';
+import 'package:social_hub/features/users/data/repository/users_repository_impl.dart';
+import 'package:social_hub/features/users/domain/repository/users_repository.dart';
+import 'package:social_hub/features/users/domain/use_cases/get_users_use_case.dart';
+import 'package:social_hub/features/users/presentation/logic/users_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -82,4 +88,38 @@ Future<void> setupDependencies() async {
 
   // Cubit
   getIt.registerFactory<HomeCubit>(() => HomeCubit(getPostsUseCase: getIt()));
+
+
+  getIt.registerLazySingleton<UsersLocalDataSource>(
+  () => UsersLocalDataSource(
+    Hive.box<dynamic>('users_cache'),
+  ),
+);
+
+
+
+getIt.registerLazySingleton<UsersRemoteDataSource>(
+  () => UsersRemoteDataSource(
+    getIt<DioClient>(),
+  ),
+);
+
+getIt.registerLazySingleton<UsersRepository>(
+  () => UsersRepositoryImpl(
+    remoteDataSource: getIt<UsersRemoteDataSource>(),
+    localDataSource: getIt<UsersLocalDataSource>(),
+  ),
+);
+
+getIt.registerLazySingleton<GetUsersUseCase>(
+  () => GetUsersUseCase(
+    getIt<UsersRepository>(),
+  ),
+);
+
+getIt.registerFactory<UsersCubit>(
+  () => UsersCubit(
+    getIt<GetUsersUseCase>(),
+  ),
+);
 }

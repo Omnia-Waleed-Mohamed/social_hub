@@ -43,6 +43,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "لا يوجد اتصال بالإنترنت. يرجى التحقق من شبكة Wi‑Fi أو البيانات المتنقلة ثم المحاولة مرة أخرى."),
         "noPosts": MessageLookupByLibrary.simpleMessage(
             "لا توجد منشورات متاحة حاليًا."),
+        "noUsers":
+            MessageLookupByLibrary.simpleMessage("لا يوجد مستخدمون متاحون."),
+        "noUsersFound": MessageLookupByLibrary.simpleMessage(
+            "لا يوجد مستخدمون مطابقون لبحثك."),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "passwordHint":
             MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
@@ -54,6 +58,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "postsTitle": MessageLookupByLibrary.simpleMessage("أحدث المنشورات"),
         "retry": MessageLookupByLibrary.simpleMessage("حاول مرة أخرى"),
         "search": MessageLookupByLibrary.simpleMessage("بحث"),
+        "searchUsers": MessageLookupByLibrary.simpleMessage(
+            "ابحث بالاسم أو اسم المستخدم أو البريد الإلكتروني"),
         "serverError": MessageLookupByLibrary.simpleMessage(
             "حدث خطأ في الخادم. حاول مرة أخرى لاحقًا"),
         "signIn": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
@@ -69,6 +75,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("أدخل اسم المستخدم"),
         "usernameRequired":
             MessageLookupByLibrary.simpleMessage("من فضلك أدخل اسم المستخدم"),
-        "users": MessageLookupByLibrary.simpleMessage("المستخدمون")
+        "users": MessageLookupByLibrary.simpleMessage("المستخدمون"),
+        "usersLoadError": MessageLookupByLibrary.simpleMessage(
+            "تعذر تحميل المستخدمين. حاول مرة أخرى."),
+        "usersSubtitle":
+            MessageLookupByLibrary.simpleMessage("تواصل مع الأشخاص في مجتمعك."),
+        "usersTitle": MessageLookupByLibrary.simpleMessage("اكتشف الأشخاص")
       };
 }

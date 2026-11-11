@@ -359,6 +359,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Discover People`
+  String get usersTitle {
+    return Intl.message(
+      'Discover People',
+      name: 'usersTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Connect with people in your community.`
+  String get usersSubtitle {
+    return Intl.message(
+      'Connect with people in your community.',
+      name: 'usersSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search by name, username or email`
+  String get searchUsers {
+    return Intl.message(
+      'Search by name, username or email',
+      name: 'searchUsers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unable to load users. Please try again.`
+  String get usersLoadError {
+    return Intl.message(
+      'Unable to load users. Please try again.',
+      name: 'usersLoadError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No users available.`
+  String get noUsers {
+    return Intl.message(
+      'No users available.',
+      name: 'noUsers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No users match your search.`
+  String get noUsersFound {
+    return Intl.message(
+      'No users match your search.',
+      name: 'noUsersFound',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

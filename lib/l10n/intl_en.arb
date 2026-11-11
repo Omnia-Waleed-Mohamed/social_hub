@@ -42,5 +42,12 @@
   "albums": "Albums",
   "todos": "Todos",
   "createPost": "Create post",
-  "createPostComingSoon": "Create post feature is coming soon."
+  "createPostComingSoon": "Create post feature is coming soon.",
+
+  "usersTitle": "Discover People",
+  "usersSubtitle": "Connect with people in your community.",
+  "searchUsers": "Search by name, username or email",
+  "usersLoadError": "Unable to load users. Please try again.",
+  "noUsers": "No users available.",
+  "noUsersFound": "No users match your search."
 }

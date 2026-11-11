@@ -44,6 +44,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "No internet connection. Please check your Wi‑Fi or mobile data and try again."),
         "noPosts": MessageLookupByLibrary.simpleMessage(
             "No posts available right now."),
+        "noUsers": MessageLookupByLibrary.simpleMessage("No users available."),
+        "noUsersFound":
+            MessageLookupByLibrary.simpleMessage("No users match your search."),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordHint":
             MessageLookupByLibrary.simpleMessage("Enter your password"),
@@ -55,6 +58,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "postsTitle": MessageLookupByLibrary.simpleMessage("Recent Posts"),
         "retry": MessageLookupByLibrary.simpleMessage("Try Again"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
+        "searchUsers": MessageLookupByLibrary.simpleMessage(
+            "Search by name, username or email"),
         "serverError": MessageLookupByLibrary.simpleMessage(
             "Server error. Please try again later"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
@@ -71,6 +76,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter your username"),
         "usernameRequired":
             MessageLookupByLibrary.simpleMessage("Please enter your username"),
-        "users": MessageLookupByLibrary.simpleMessage("Users")
+        "users": MessageLookupByLibrary.simpleMessage("Users"),
+        "usersLoadError": MessageLookupByLibrary.simpleMessage(
+            "Unable to load users. Please try again."),
+        "usersSubtitle": MessageLookupByLibrary.simpleMessage(
+            "Connect with people in your community."),
+        "usersTitle": MessageLookupByLibrary.simpleMessage("Discover People")
       };
 }
