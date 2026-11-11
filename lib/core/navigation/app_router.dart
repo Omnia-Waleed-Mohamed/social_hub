@@ -12,7 +12,7 @@ abstract class AppRouter {
   AppRouter._();
 
   static final GoRouter router = GoRouter(
-    initialLocation: '/login',
+    initialLocation: '/home',
     routes: [
       GoRoute(
         path: '/login',
