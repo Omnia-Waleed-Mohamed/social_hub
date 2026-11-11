@@ -49,5 +49,27 @@
   "searchUsers": "Search by name, username or email",
   "usersLoadError": "Unable to load users. Please try again.",
   "noUsers": "No users available.",
-  "noUsersFound": "No users match your search."
+  "noUsersFound": "No users match your search.",
+  "albumsTitle": "Explore Albums",
+  "albumsSubtitle": "Discover photo collections shared by the community.",
+  "searchAlbums": "Search albums by title",
+  "albumNumber": "Album #{id}",
+  "@albumNumber": {
+    "placeholders": {
+      "id": {
+        "type": "int"
+      }
+    }
+  },
+  "albumOwner": "User #{userId}",
+  "@albumOwner": {
+    "placeholders": {
+      "userId": {
+        "type": "int"
+      }
+    }
+  },
+  "noAlbums": "No albums available.",
+  "noAlbumsFound": "No albums match your search.",
+  "albumsLoadError": "Unable to load albums. Please try again."
 }

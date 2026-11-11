@@ -20,11 +20,22 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(postId) => "Post #${postId}";
+  static String m0(id) => "Album #${id}";
+
+  static String m1(userId) => "User #${userId}";
+
+  static String m2(postId) => "Post #${postId}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "albumNumber": m0,
+        "albumOwner": m1,
         "albums": MessageLookupByLibrary.simpleMessage("Albums"),
+        "albumsLoadError": MessageLookupByLibrary.simpleMessage(
+            "Unable to load albums. Please try again."),
+        "albumsSubtitle": MessageLookupByLibrary.simpleMessage(
+            "Discover photo collections shared by the community."),
+        "albumsTitle": MessageLookupByLibrary.simpleMessage("Explore Albums"),
         "createPost": MessageLookupByLibrary.simpleMessage("Create post"),
         "createPostComingSoon": MessageLookupByLibrary.simpleMessage(
             "Create post feature is coming soon."),
@@ -40,6 +51,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginTitle": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
         "networkError": MessageLookupByLibrary.simpleMessage(
             "Please check your internet connection"),
+        "noAlbums":
+            MessageLookupByLibrary.simpleMessage("No albums available."),
+        "noAlbumsFound": MessageLookupByLibrary.simpleMessage(
+            "No albums match your search."),
         "noInternet": MessageLookupByLibrary.simpleMessage(
             "No internet connection. Please check your Wi‑Fi or mobile data and try again."),
         "noPosts": MessageLookupByLibrary.simpleMessage(
@@ -52,12 +67,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter your password"),
         "passwordRequired":
             MessageLookupByLibrary.simpleMessage("Please enter your password"),
-        "postNumber": m0,
+        "postNumber": m2,
         "postsLoadError": MessageLookupByLibrary.simpleMessage(
             "Something went wrong while loading posts. Please try again."),
         "postsTitle": MessageLookupByLibrary.simpleMessage("Recent Posts"),
         "retry": MessageLookupByLibrary.simpleMessage("Try Again"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
+        "searchAlbums":
+            MessageLookupByLibrary.simpleMessage("Search albums by title"),
         "searchUsers": MessageLookupByLibrary.simpleMessage(
             "Search by name, username or email"),
         "serverError": MessageLookupByLibrary.simpleMessage(

@@ -45,5 +45,27 @@
   "searchUsers": "ابحث بالاسم أو اسم المستخدم أو البريد الإلكتروني",
   "usersLoadError": "تعذر تحميل المستخدمين. حاول مرة أخرى.",
   "noUsers": "لا يوجد مستخدمون متاحون.",
-  "noUsersFound": "لا يوجد مستخدمون مطابقون لبحثك."
+  "noUsersFound": "لا يوجد مستخدمون مطابقون لبحثك.",
+  "albumsTitle": "اكتشف الألبومات",
+  "albumsSubtitle": "استكشف مجموعات الصور التي يشاركها المجتمع.",
+  "searchAlbums": "ابحث عن ألبوم بالعنوان ",
+  "albumNumber": "الألبوم رقم {id}",
+  "@albumNumber": {
+    "placeholders": {
+      "id": {
+        "type": "int"
+      }
+    }
+  },
+  "albumOwner": "المستخدم رقم {userId}",
+  "@albumOwner": {
+    "placeholders": {
+      "userId": {
+        "type": "int"
+      }
+    }
+  },
+  "noAlbums": "لا توجد ألبومات متاحة.",
+  "noAlbumsFound": "لا توجد ألبومات تطابق بحثك.",
+  "albumsLoadError": "تعذر تحميل الألبومات. حاول مرة أخرى."
 }

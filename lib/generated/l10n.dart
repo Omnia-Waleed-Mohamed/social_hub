@@ -419,6 +419,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Explore Albums`
+  String get albumsTitle {
+    return Intl.message(
+      'Explore Albums',
+      name: 'albumsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Discover photo collections shared by the community.`
+  String get albumsSubtitle {
+    return Intl.message(
+      'Discover photo collections shared by the community.',
+      name: 'albumsSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search albums by title`
+  String get searchAlbums {
+    return Intl.message(
+      'Search albums by title',
+      name: 'searchAlbums',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Album #{id}`
+  String albumNumber(int id) {
+    return Intl.message(
+      'Album #$id',
+      name: 'albumNumber',
+      desc: '',
+      args: [id],
+    );
+  }
+
+  /// `User #{userId}`
+  String albumOwner(int userId) {
+    return Intl.message(
+      'User #$userId',
+      name: 'albumOwner',
+      desc: '',
+      args: [userId],
+    );
+  }
+
+  /// `No albums available.`
+  String get noAlbums {
+    return Intl.message(
+      'No albums available.',
+      name: 'noAlbums',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No albums match your search.`
+  String get noAlbumsFound {
+    return Intl.message(
+      'No albums match your search.',
+      name: 'noAlbumsFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unable to load albums. Please try again.`
+  String get albumsLoadError {
+    return Intl.message(
+      'Unable to load albums. Please try again.',
+      name: 'albumsLoadError',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

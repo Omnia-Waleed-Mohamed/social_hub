@@ -3,6 +3,12 @@ import 'package:get_it/get_it.dart';
 import 'package:hive_ce_flutter/hive_flutter.dart';
 import 'package:social_hub/core/network/dio_client.dart';
 import 'package:social_hub/core/storage/session_storage.dart';
+import 'package:social_hub/features/albums/data/data_source/albums_local_data_source.dart';
+import 'package:social_hub/features/albums/data/data_source/albums_remote_data_source.dart';
+import 'package:social_hub/features/albums/data/repository/albums_repository_impl.dart';
+import 'package:social_hub/features/albums/domain/repository/albums_repository.dart';
+import 'package:social_hub/features/albums/domain/use_case/get_albums_use_case.dart';
+import 'package:social_hub/features/albums/presentation/logic/albums_cubit.dart';
 import 'package:social_hub/features/auth/data/data_sources/auth_local_data_source.dart';
 import 'package:social_hub/features/auth/data/data_sources/auth_remote_data_source.dart';
 import 'package:social_hub/features/auth/data/repositories/auth_repository_impl.dart';
@@ -120,6 +126,39 @@ getIt.registerLazySingleton<GetUsersUseCase>(
 getIt.registerFactory<UsersCubit>(
   () => UsersCubit(
     getIt<GetUsersUseCase>(),
+  ),
+);
+
+
+
+getIt.registerLazySingleton<AlbumsLocalDataSource>(
+  () => AlbumsLocalDataSource(
+    Hive.box<dynamic>('albums_cache'),
+  ),
+);
+
+getIt.registerLazySingleton<AlbumsRemoteDataSource>(
+  () => AlbumsRemoteDataSource(
+    getIt<DioClient>(),
+  ),
+);
+
+getIt.registerLazySingleton<AlbumsRepository>(
+  () => AlbumsRepositoryImpl(
+    remoteDataSource: getIt<AlbumsRemoteDataSource>(),
+    localDataSource: getIt<AlbumsLocalDataSource>(),
+  ),
+);
+
+getIt.registerLazySingleton<GetAlbumsUseCase>(
+  () => GetAlbumsUseCase(
+    getIt<AlbumsRepository>(),
+  ),
+);
+
+getIt.registerFactory<AlbumsCubit>(
+  () => AlbumsCubit(
+    getIt<GetAlbumsUseCase>(),
   ),
 );
 }

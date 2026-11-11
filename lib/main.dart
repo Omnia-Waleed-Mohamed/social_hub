@@ -14,6 +14,7 @@ Future<void> main() async {
   await Hive.initFlutter();
 
   await Hive.openBox<dynamic>('users_cache');
+  await Hive.openBox<dynamic>('albums_cache');
 
   await setupDependencies();
 

@@ -20,11 +20,22 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
-  static String m0(postId) => "منشور رقم ${postId}";
+  static String m0(id) => "الألبوم رقم ${id}";
+
+  static String m1(userId) => "المستخدم رقم ${userId}";
+
+  static String m2(postId) => "منشور رقم ${postId}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "albumNumber": m0,
+        "albumOwner": m1,
         "albums": MessageLookupByLibrary.simpleMessage("الألبومات"),
+        "albumsLoadError": MessageLookupByLibrary.simpleMessage(
+            "تعذر تحميل الألبومات. حاول مرة أخرى."),
+        "albumsSubtitle": MessageLookupByLibrary.simpleMessage(
+            "استكشف مجموعات الصور التي يشاركها المجتمع."),
+        "albumsTitle": MessageLookupByLibrary.simpleMessage("اكتشف الألبومات"),
         "createPost": MessageLookupByLibrary.simpleMessage("إنشاء منشور"),
         "createPostComingSoon": MessageLookupByLibrary.simpleMessage(
             "ميزة إنشاء المنشورات قريبًا."),
@@ -39,6 +50,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginTitle": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك!"),
         "networkError": MessageLookupByLibrary.simpleMessage(
             "يرجى التحقق من اتصالك بالإنترنت"),
+        "noAlbums":
+            MessageLookupByLibrary.simpleMessage("لا توجد ألبومات متاحة."),
+        "noAlbumsFound":
+            MessageLookupByLibrary.simpleMessage("لا توجد ألبومات تطابق بحثك."),
         "noInternet": MessageLookupByLibrary.simpleMessage(
             "لا يوجد اتصال بالإنترنت. يرجى التحقق من شبكة Wi‑Fi أو البيانات المتنقلة ثم المحاولة مرة أخرى."),
         "noPosts": MessageLookupByLibrary.simpleMessage(
@@ -52,12 +67,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
         "passwordRequired":
             MessageLookupByLibrary.simpleMessage("من فضلك أدخل كلمة المرور"),
-        "postNumber": m0,
+        "postNumber": m2,
         "postsLoadError": MessageLookupByLibrary.simpleMessage(
             "حدث خطأ أثناء تحميل المنشورات. حاول مرة أخرى."),
         "postsTitle": MessageLookupByLibrary.simpleMessage("أحدث المنشورات"),
         "retry": MessageLookupByLibrary.simpleMessage("حاول مرة أخرى"),
         "search": MessageLookupByLibrary.simpleMessage("بحث"),
+        "searchAlbums":
+            MessageLookupByLibrary.simpleMessage("ابحث عن ألبوم بالعنوان "),
         "searchUsers": MessageLookupByLibrary.simpleMessage(
             "ابحث بالاسم أو اسم المستخدم أو البريد الإلكتروني"),
         "serverError": MessageLookupByLibrary.simpleMessage(

@@ -20,12 +20,13 @@ class AlbumsRemoteDataSource {
 
     for (final photo in photosData) {
       final photoData = photo as Map<String, dynamic>;
-      final albumId = photoData['albumId'] as int;
 
-      albumCovers.putIfAbsent(
-        albumId,
-        () => photoData['thumbnailUrl'] as String? ?? '',
-      );
+      final albumId = photoData['albumId'] as int;
+      final photoId = photoData['id'] as int;
+
+      final imageUrl = 'https://picsum.photos/seed/$photoId/600';
+
+      albumCovers.putIfAbsent(albumId, () => imageUrl);
     }
 
     return albumsData.map((album) {
