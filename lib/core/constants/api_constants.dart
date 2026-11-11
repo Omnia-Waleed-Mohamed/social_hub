@@ -9,6 +9,7 @@ abstract class ApiConstants {
   static const String posts = '/posts';
   static const String albums = '/albums';
   static const String photos = '/photos';
+  static const String todos = '/todos';
 
   static const Duration connectTimeout = Duration(seconds: 30);
   static const Duration receiveTimeout = Duration(seconds: 15);
